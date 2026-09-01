@@ -1,6 +1,7 @@
 {
   "name": "lab3",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "",
   "main": "prg1.js",
   "dependencies": {
@@ -35,11 +36,22 @@
   "devDependencies": {
     "nodemon": "^3.1.14"
   },
+=======
+  "description": "localhost - URL\r 127.0.0.1 - IP address",
+  "main": "prg1.js",
+>>>>>>> cb14243 (npm starts)
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+<<<<<<< HEAD
   "type": "module"
+=======
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+>>>>>>> cb14243 (npm starts)
 }

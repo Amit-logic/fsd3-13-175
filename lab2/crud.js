@@ -108,18 +108,16 @@ const getCart = async () => {
 
 const addToCart = async (item) => {
   const products = await getCart();
-  const productFound = product.find((p)=> p.id === iteam.id);
-   if(produdctFound){
-    productFound.qty += iteam.qty;
-    comsole.log("product in cart is updated");
-   } else {
-        products.push(iteam);
-        console.log("product added succesfully");
-   }
-  products.push(item);
+  const productFound = products.find((p) => p.id === item.id);
+  if (productFound) {
+    productFound.qty += item.qty;
+  } 
+  else {
+    products.push(item);
+    console.log("product added successfully");
+  }
   await saveCart(products);
 };
-
 const showCart =  () => {
   console.log("showcart:");
 
