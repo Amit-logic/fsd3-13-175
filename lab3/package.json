@@ -4,7 +4,7 @@
   "description": "localhost  - URL\r 127.0.0.1 - IP address\r ctrl+c  - For stop the server\r every request from client has a pair of { request ,response}\r ## NPM - (Node Package Manager)\r     use to install ,run ,unistall any program / projects and package\r     - npm install   <packageName>\r     - npm uninstall <packageName>",
   "main": "prg1.js",
   "scripts": {
-    "dev": "nodemon prg3.js",
+    "dev": "nodemon prg4.js",
     "start": "node prg2.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

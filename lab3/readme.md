@@ -47,3 +47,24 @@ Note: -D flag will install this package as developer dependency.
  1. res.writeHead
  2.res.setHead
  3.res.statusCode
+
+  
+## send html file to vlient
+1. html file
+-read html file using  createdreadstream
+  -pipe it with res object
+
+2. html content
+send any html tags/content by using
+res.end('any html tag')
+
+## JSON ()
+server return data only not html contents because html contain will be written front end developer.
+the data is in json format(json always store data in key ,value pair enclosed by {},array can be store by [],one pair of curly bracket will represent one object and its properties will be seperated by comma)
+```
+{ id:1,
+name:'Mobile',
+price:25000,
+rating:4.5,
+review:200
+}
