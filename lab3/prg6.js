@@ -1,15 +1,42 @@
 import http from "http";
 
-const server = http.createServer((req, res) => {
-  console.log("server hits");
+const server = http.createServer((req,res)=>{
+    if(req.url === '/' && req.method === 'GET'){
+      
+        res.statusCode = 200;
+        res.end("Get Request");
 
-  if (req.url === "/") {
-    res.statusCode = 200;
-    res.end("sent with 200");
-  } else {
-    res.statusCode = 404;
-    res.end("request not found");
-  }
+    }
+    else if(req.url === '/' && req.method === "POST"){
+      //console.log("Request:",req)
+      let body=''
+      req.on('data',(chunk)=>{
+        body += chunk
+      });
+      req.on("end",()=>{
+        const product=JSON.parse(body);
+        console.log("received product:",product);
+          res.statusCode = 200;
+        res.end(JSON.stringify({msg:'Product added',product}));
+      });
+      
+    }
+    else if(req.url === '/' && req.method === "PUT"){
+        res.statusCode = 200;
+        res.end(' PUT Request');
+    }
+    else if(req.url === '/' && req.method === "DELETE"){
+        res.statusCode = 200;
+        res.end(' DELETE Request');
+    }
+    else if(req.url === '/' && req.method === "DELETE"){
+        res.statusCode = 200;
+        res.end('DELETE Request');
+    }
+    else{
+        res.statusCode = 404;
+        res.end('request Not Found');
+    }
+
 });
-
-server.listen(5000, () => console.log("prg6 is running at 5000"));
+server.listen(5000,() => console.log("prg6 is running"));
